@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
+    <title>Pokeke</title>
     <meta charset="utf-8">
-    <meta name="Pokeke" description="PokeAPIを使って遊んでみよう!のサイト">
+    <meta name="description" content="PokeAPIを使って遊んでみよう!のサイト">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="src/style.css">
     <script src="src/main.ts" type="module"></script>
-    <title>Pokeke</title>
   </head>
   <body>
     <h1>Pokeke</h1>
-    <div id="poke-container"></div>
+    <form method="get" class="form" id="poke-form">
+      <div class="form">
+        <label for="id">図鑑No.を入力</label>
+        <input type="text" name="id" id="poke-id">
+        <button type="submit">検索</button>
+      </div>
+    </form>
+    <div id="poke-container">
+      <p id="error-msg"></p>
+      <p id="poke-name"></p>
+      <img id="poke-image" alt="">
+    </div>
   </body>
 </html>
