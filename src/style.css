@@ -7,3 +7,56 @@ h1 {
 #error-msg {
   color: red;
 }
+
+#poke-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#poke-container {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#main {
+  width: 7em;
+}
+
+#poke-name {
+  margin: 0;
+}
+
+#stats {
+  height: 150px;
+  width: 8em;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 0.5em;
+}
+
+#stats-h {
+  margin: 0;
+}
+
+#stats-a {
+  margin: 0;
+}
+
+#stats-b {
+  margin: 0;
+}
+
+#stats-c {
+  margin: 0;
+}
+
+#stats-d {
+  margin: 0;
+}
+
+#stats-s {
+  margin: 0;
+}
