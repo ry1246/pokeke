@@ -11,9 +11,13 @@ form?.addEventListener('submit', async (event) => {
   }
   const id = input.value;
 
+  const mainElem = document.getElementById('main');
+  const statsElem = document.getElementById('stats');
+  const errorElem = document.getElementById('error');
+
   const nameElem = document.getElementById('poke-name');
   const imageElem = document.getElementById('poke-image') as HTMLImageElement;
-  const errorElem = document.getElementById('error-msg');
+  const errorMsgElem = document.getElementById('error-msg');
 
   // stats element
   const hStatsElem = document.getElementById('stats-h');
@@ -22,13 +26,6 @@ form?.addEventListener('submit', async (event) => {
   const cStatsElem = document.getElementById('stats-c');
   const dStatsElem = document.getElementById('stats-d');
   const sStatsElem = document.getElementById('stats-s');
-
-  if (nameElem) nameElem.textContent = '';
-  if (imageElem) {
-    imageElem.src = '';
-    imageElem.alt = '';
-  }
-  if (errorElem) errorElem.textContent = '';
 
   try {
     const pokemon = await getPokemon(Number(id));
@@ -64,9 +61,16 @@ form?.addEventListener('submit', async (event) => {
       }
     }
 
+    mainElem?.classList.remove('is-hidden');
+    statsElem?.classList.remove('is-hidden');
+    errorElem?.classList.add('is-hidden');
+
   } catch (error) {
-    if (errorElem) {
-      errorElem.textContent = 'Not found';
+    if (errorMsgElem) {
+      mainElem?.classList.add('is-hidden');
+      statsElem?.classList.add('is-hidden');
+      errorElem?.classList.remove('is-hidden');
+      errorMsgElem.textContent = 'Not found';
     }
   }
 });
